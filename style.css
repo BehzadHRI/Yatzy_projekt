@@ -1,0 +1,52 @@
+.container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr, 2fr;
+    grid-template-areas: 
+    ". titel titel ."
+    "dice dice dice dice"
+    ". . roll ."
+    ". input . ."
+}
+
+.input{
+    grid-area: input;    
+}
+
+input{ 
+    width: 3em;
+
+}
+.dice{
+    grid-area: dice;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+img{
+    width: 60px;
+    height: 65px;
+}
+.roll{
+    grid-area: roll;
+}
+
+button{
+    margin-left: 37%;
+    height: 3em;
+    width: 6em;
+    border-radius: 10%;
+}
+
+h1{
+    grid-area: titel;
+    margin-left: auto;
+    margin-right: auto;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (min-device-width: 400px){
+    
+}
