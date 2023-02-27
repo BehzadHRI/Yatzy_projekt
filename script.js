@@ -1,5 +1,3 @@
-
-
 let alleInput = document.querySelectorAll('input');
 let labelNavne = ["1-s", "2-s", "3-s", "4-s", "5-s", "6-s", "One-pair", "Two-pair", "Three same", "Four same", "Full house", "Small straight", "Large straight", "Chance", "Yatzy"]
 console.log(alleInput.length)
@@ -24,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Array der holder information omkring om en terning er "holdt"
     const diceSaved = [false, false, false, false, false];
+
+    // Counter for antal kast
+    let rollCount = 0;
     
     // Roll knap action method
     document.querySelector('.roll button').addEventListener('click', () => {
@@ -36,6 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
           image.src = `assets/dice${value}.png`;
         }
       });
+      
+      // Opdater counter for antal kast
+      rollCount++;
+      
+      // Hvis der er blevet kastet 3 gange, deaktiver roll-knappen
+      if (rollCount >= 3) {
+        const rollButton = document.querySelector('.roll button');
+        rollButton.disabled = true;
+        rollButton.style.opacity = 0.2;
+        turn.innerText = "Turn: " + rollCount;
+      }
     });
   
     // Terning klik action method
@@ -52,4 +64,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
   });
-  
