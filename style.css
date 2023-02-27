@@ -2,16 +2,21 @@
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr 2fr;
+    grid-template-rows: 5em 4em 3em 30em;
     grid-template-areas: 
     ". titel titel ."
     "dice dice dice dice"
     ". . roll ."
-    "label input . ."
+    "input . . ."
 }
 
 .input{
-    grid-area: input;    
+    grid-area: input;
+    
+}
+
+.label{
+    grid-area: label;
 }
 
 input{ 
@@ -47,10 +52,7 @@ h1{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-label{
-    grid-area: label;
 
-}
 
 .dice img.selected-dice {
     border: 2px solid red;

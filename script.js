@@ -5,12 +5,10 @@ let labelNavne = ["1-s", "2-s", "3-s", "4-s", "5-s", "6-s", "One-pair", "Two-pai
 console.log(alleInput.length)
 //sæt id på input felter og sæt label på:
 for (let element in alleInput) {
-
    alleInput[element].id = labelNavne[element];
-   alleInput[element].value = "Hej"
 
-    alleInput[element].outerHTML = '<label id="' + labelNavne[element] + '-label" for='+alleInput[element].id +'>' 
-    + labelNavne[element] + '</label>' + alleInput[element].outerHTML;
+    alleInput[element].outerHTML = '<div class="label"><label id="' + labelNavne[element] + '-label" for='+alleInput[element].id +'>' 
+    + labelNavne[element] + '</label> </div>' + alleInput[element].outerHTML;
 }
 
 
